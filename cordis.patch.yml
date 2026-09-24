@@ -1,0 +1,79 @@
+# Agent preset awesome-agent
+# Ultra-lean daily coding agent: files, shell, skills, background jobs;
+# no present/goals/plan mode/subagents/todo/web tools.
+# Composition is frozen at mount — edit this file, reinstall, start a new session.
+- insert:
+    - id: preset-awesome-agent
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: awesome-agent
+        name: awesome-agent
+        order: 10
+        description: 极简瘦身版日常编码 Agent：保留文件、Shell、Skills、后台任务；不含 交付物(present) / 目标 / 计划 / 子代理 / TODO。
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              suffix: Your working directory is {{cwd}}.
+              prefix: >-
+                You are a coding agent powered by the {{model}} model.
+                Prefer direct tools over orchestration; this body has no workflow, ralph, web tools, or delegation.
+
+          - id: agent-instructions
+            name: '@deepseek-ai/dsh-agent-instructions'
+            config:
+              maxBytes: 65536
+
+          # ── shell ─────────────────────────────────────────────────────────
+          - id: tool-bash
+            name: '@deepseek-ai/dsh-tool-bash'
+
+          # ── filesystem ────────────────────────────────────────────────────
+          - id: tool-fs
+            name: '@deepseek-ai/dsh-tool-fs'
+
+          - id: tool-fs-search
+            name: '@deepseek-ai/dsh-tool-fs-search'
+            config:
+              sampleOverCapGlobResults: false
+
+          # ── background jobs ───────────────────────────────────────────────
+          - id: tool-jobs
+            name: '@deepseek-ai/dsh-tool-jobs'
+
+          # ── skills ────────────────────────────────────────────────────────
+          - id: skill-filesystem
+            name: '@deepseek-ai/dsh-skill-filesystem'
+
+          - id: tool-skill
+            name: '@deepseek-ai/dsh-tool-skill'
+
+          # ── compaction ────────────────────────────────────────────────────
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+              toolResultPruner: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'
+                config:
+                  thresholdRatio: 0.8
+                  retainRatio: 0.03
+
+              - id: command-compact
+                name: '@deepseek-ai/dsh-command-compact'
+
+              - id: tool-result-pruner
+                name: '@deepseek-ai/dsh-compaction-tool-result-pruner'
+                config:
+                  thresholdChars: 8192
+                  headChars: 4096
+                  tailChars: 1024
+
+          # ── interaction ───────────────────────────────────────────────────
+          - id: tool-ask-user
+            name: '@deepseek-ai/dsh-tool-ask-user'
+          # No tool-web: web_search/web_fetch stay off this body; the host `web`
+          # service remains. Research and URL reads belong in skills.
