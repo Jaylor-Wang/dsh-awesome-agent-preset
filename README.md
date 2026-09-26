@@ -20,6 +20,8 @@ Ultra-lean daily coding agent preset for [DeepSeek Harness (`dsh`)](https://gith
 Run in your DeepSeek Harness environment:
 
 ```bash
+dsh plugin --profile web add dsh-awesome-agent-preset
+# or via GitHub repository
 dsh plugin --profile web add https://github.com/Jaylor-Wang/dsh-awesome-agent-preset
 ```
 

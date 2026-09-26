@@ -20,6 +20,8 @@
 在 DeepSeek Harness 环境中运行：
 
 ```bash
+dsh plugin --profile web add dsh-awesome-agent-preset
+# 或直接通过 GitHub 仓库安装
 dsh plugin --profile web add https://github.com/Jaylor-Wang/dsh-awesome-agent-preset
 ```
 

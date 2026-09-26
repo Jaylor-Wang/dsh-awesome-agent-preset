@@ -3,13 +3,20 @@
   "version": "1.0.0",
   "description": "Ultra-lean daily coding agent preset for DeepSeek Harness (dsh): direct tools over orchestration, fast and responsive.",
   "type": "module",
+  "main": "index.js",
+  "author": "Jaylor-Wang",
   "license": "MIT",
+  "homepage": "https://github.com/Jaylor-Wang/dsh-awesome-agent-preset#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jaylor-Wang/dsh-awesome-agent-preset.git"
+    "url": "git+https://github.com/Jaylor-Wang/dsh-awesome-agent-preset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jaylor-Wang/dsh-awesome-agent-preset/issues"
   },
   "keywords": [
     "deepseek-harness",
+    "dsh",
     "dsh-plugin",
     "cordis",
     "agent-preset"
@@ -18,5 +25,12 @@
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
-  }
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ]
 }
