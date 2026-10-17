@@ -3,7 +3,7 @@
 [English](README.md) | 中文
 
 [![npm version](https://img.shields.io/npm/v/dsh-awesome-agent-preset.svg?color=blue)](https://www.npmjs.com/package/dsh-awesome-agent-preset)
-[![license](https://img.shields.io/github/license/Jaylor-Wang/dsh-awesome-agent-preset.svg)](LICENSE)
+[![license](https://img.shields.io/npm/l/dsh-awesome-agent-preset.svg)](LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/Jaylor-Wang/dsh-awesome-agent-preset.svg)](https://github.com/Jaylor-Wang/dsh-awesome-agent-preset/releases)
 [![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-Preset-orange.svg)](https://github.com/deepseek-ai/deepseek-harness)
 
