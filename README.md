@@ -2,6 +2,11 @@
 
 English | [中文](README.zh.md)
 
+[![npm version](https://img.shields.io/npm/v/dsh-awesome-agent-preset.svg?color=blue)](https://www.npmjs.com/package/dsh-awesome-agent-preset)
+[![license](https://img.shields.io/github/license/Jaylor-Wang/dsh-awesome-agent-preset.svg)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/Jaylor-Wang/dsh-awesome-agent-preset.svg)](https://github.com/Jaylor-Wang/dsh-awesome-agent-preset/releases)
+[![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-Preset-orange.svg)](https://github.com/deepseek-ai/deepseek-harness)
+
 Ultra-lean daily coding agent preset for [DeepSeek Harness (`dsh`)](https://github.com/deepseek-ai/deepseek-harness).
 
 ## Highlights
