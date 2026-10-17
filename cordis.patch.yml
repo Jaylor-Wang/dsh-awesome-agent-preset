@@ -14,7 +14,6 @@
           - id: persona
             name: '@deepseek-ai/dsh-persona'
             config:
-              suffix: Your working directory is {{cwd}}.
               prefix: >-
                 You are a coding agent powered by the {{model}} model.
                 Prefer direct tools over orchestration; this body has no workflow, ralph, web tools, or delegation.
