@@ -18,6 +18,9 @@ Ultra-lean daily coding agent preset for [DeepSeek Harness (`dsh`)](https://gith
   - Background asynchronous task management (`tool-jobs`)
   - External skill packs support (`skill-filesystem`, `tool-skill`)
   - On-demand context compaction & memory protection (`compaction`, `/compact`)
+- **Tuned FS & Search Efficiency (Aligned with AGENTS.md)**:
+  - `tool-fs-search`: caps `glob` results to ≤ 50 entries and `grep` matches to ≤ 50 (preview ≤ 500 bytes/line), preventing context flooding and utilizing spill files when exceeded.
+  - `tool-fs`: `readLimit: 800` (max 600 chars/line, max 120KB), ensuring cohesive code units are read in full while preventing massive monolithic files from blowing up token windows.
 - **Direct Execution**: Persona instructed to favor direct tool execution over excessive coordination, saving tokens and speeding up turnaround time.
 
 ## Installation

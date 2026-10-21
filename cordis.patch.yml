@@ -30,11 +30,22 @@
           # ── filesystem ────────────────────────────────────────────────────
           - id: tool-fs
             name: "@deepseek-ai/dsh-tool-fs"
+            config:
+              read: true
+              readImage: true
+              write: true
+              edit: true
+              readLimit: 800
+              readMaxLineLength: 600
+              readMaxBytes: 120000
 
           - id: tool-fs-search
             name: "@deepseek-ai/dsh-tool-fs-search"
             config:
               sampleOverCapGlobResults: false
+              globMaxResults: 50
+              grepMaxMatches: 50
+              grepMaxLineBytes: 500
 
           # ── background jobs ───────────────────────────────────────────────
           - id: tool-jobs
