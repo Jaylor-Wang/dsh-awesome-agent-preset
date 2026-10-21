@@ -21,6 +21,9 @@ Ultra-lean daily coding agent preset for [DeepSeek Harness (`dsh`)](https://gith
 - **Tuned FS & Search Efficiency (Aligned with AGENTS.md)**:
   - `tool-fs-search`: caps `glob` results to ≤ 50 entries and `grep` matches to ≤ 50 (preview ≤ 500 bytes/line), preventing context flooding and utilizing spill files when exceeded.
   - `tool-fs`: `readLimit: 800` (max 600 chars/line, max 120KB), ensuring cohesive code units are read in full while preventing massive monolithic files from blowing up token windows.
+- **Resilient Bash & Long-running Job Execution**:
+  - `tool-bash`: enables background job support and `promoteOnTimeout: true` (smoothly promotes timed-out foreground commands into background jobs, preventing task termination and UI hangs).
+  - Recommended pairing with executor `bash-sandbox` tuning (`maxOutputBytes: 32768`), reducing stream memory buffer from 64KB to 32KB with automatic spill retention to safeguard context budgets.
 - **Direct Execution**: Persona instructed to favor direct tool execution over excessive coordination, saving tokens and speeding up turnaround time.
 
 ## Installation
