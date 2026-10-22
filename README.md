@@ -24,7 +24,7 @@ Ultra-lean daily coding agent preset for [DeepSeek Harness (`dsh`)](https://gith
 - **Resilient Bash & Long-running Job Execution**:
   - `tool-bash`: enables background job support and `promoteOnTimeout: true` (smoothly promotes timed-out foreground commands into background jobs, preventing task termination and UI hangs).
   - Recommended pairing with executor `bash-sandbox` tuning (`maxOutputBytes: 32768`), reducing stream memory buffer from 64KB to 32KB with automatic spill retention to safeguard context budgets.
-- **Direct Execution**: Persona instructed to favor direct tool execution over excessive coordination, saving tokens and speeding up turnaround time.
+- **Autonomous & Concurrent Persona**: Persona instructs the model to bias toward direct action over speculation, leverage tool concurrency (`fs`, `bash`, `skills`), minimize pre-action commentary, and deliver surgical edits with high signal-to-noise ratio.
 
 ## Installation
 
