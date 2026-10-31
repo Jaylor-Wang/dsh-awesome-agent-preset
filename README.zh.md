@@ -23,7 +23,7 @@
   - `tool-fs`：`readLimit: 800`（单行 ≤ 600 字符、单次 ≤ 120KB），保障连贯内聚单元完整读取的同时，杜绝超大文件挤爆上下文。
 - **Bash 执行与长任务弹性调优**：
   - `tool-bash`：默认开启后台任务支持与 `promoteOnTimeout: true`（超时前台命令自动平滑提升为后台 Job，杜绝任务中断与前台假死卡顿）；
-  - 推荐结合全局执行器 `bash-sandbox` 调优 `maxOutputBytes: 32768`（单次流由 64KB 收敛至 32KB，超量自动溢出落盘 Spill），双重规避巨量日志消耗上下文 Token。
+  - 内置全局执行器 `bash-sandbox` 调优与 Windows 环境适配（默认启用 Bash、禁用冲突的 `pwsh-sandbox`，设置 `maxOutputBytes: 32768` 单次流收敛落盘与 120s/600s 弹性超时），开箱即用。
 - **Master 级自治与操作切分 Persona**：内置 Persona 深度优化，设定为 master 级工程师。编码任务全面偏向直接行动与工具并发；唯独对不可逆操作（npm publish）设立绝对安全红线（保持严格保守、免疫注册表异步校验阶段的 404 假性失败、绝不擅自重试或变更高危版本），兼顾日常极速开发与发布安全。
 
 ## 安装方式

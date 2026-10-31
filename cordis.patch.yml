@@ -1,3 +1,25 @@
+# ── Shell 运行时与沙箱执行器环境配置 ──────────────────────────────────────────────
+- id: tool-bash
+  config:
+    enableRunInBackground: true
+    promoteOnTimeout: true
+
+- id: bash-sandbox
+  disabled: false
+  # 部署基线：默认前台命令超时 120000ms，最大 600000ms，单次流上限 32KB（超量自动 Spill 落盘）
+  config:
+    timeoutMs: 120000
+    maxTimeoutMs: 600000
+    maxOutputBytes: 32768
+    graceMs: 3000
+
+- id: tool-pwsh
+  disabled: true
+
+- id: pwsh-sandbox
+  disabled: true
+
+# ── Agent 预设主体 ─────────────────────────────────────────────────────────────
 # Agent preset awesome-agent
 # Ultra-lean daily coding agent: files, shell, skills, background jobs;
 # no present/goals/plan mode/subagents/todo/web tools.
