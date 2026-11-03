@@ -6,11 +6,10 @@
 
 - id: bash-sandbox
   disabled: false
-  # 部署基线：默认前台命令超时 120000ms，最大 600000ms，单次流上限 32KB（超量自动 Spill 落盘）
+  # 部署基线：默认前台命令超时 120000ms，最大 600000ms，宽限缓冲 3000ms（单流输出上限由全局或官方默认 64KB 维护）
   config:
     timeoutMs: 120000
     maxTimeoutMs: 600000
-    maxOutputBytes: 32768
     graceMs: 3000
 
 - id: tool-pwsh
