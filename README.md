@@ -13,12 +13,11 @@ Ultra-lean daily coding agent preset for [DeepSeek Harness (`dsh`)](https://gith
 
 - **Lean & Responsive**: Removes heavy orchestration layers (no file delivery tool (`present`), goals, complex plan modes, sub-agents, or TODO trackers). Focuses purely on fast, direct coding cycles.
 - **Essential Tooling**: Retains core tools needed for day-to-day software development:
-  - File reading, editing, concurrent patch delivery, and fast directory scanning (`fs`, `fs-search`, with `apply_patch` enabled out of the box)
+  - File reading, editing, and fast directory scanning (`fs`, `fs-search`)
   - Full-featured Bash execution (`tool-bash`)
   - Background asynchronous task management (`tool-jobs`)
   - External skill packs support (`skill-filesystem`, `tool-skill`)
   - On-demand context compaction & memory protection (`compaction`, `/compact`)
-- **Native Multi-File Concurrent Patch Delivery (`apply_patch`)**: Enables `tool-fs.applyPatch: true` out of the box, allowing models to batch create, update, rename, and delete across multiple files and separated regions in a single tool call using patch syntax. Significantly cuts round-trips and context replay overhead while rendering rich visual diff cards.
 - **Tuned FS & Search Efficiency (Aligned with AGENTS.md)**:
   - `tool-fs-search`: caps `glob` results to ≤ 50 entries and `grep` matches to ≤ 50 (preview ≤ 500 bytes/line), preventing context flooding and utilizing spill files when exceeded.
   - `tool-fs`: `readLimit: 800` (max 600 chars/line, max 120KB), ensuring cohesive code units are read in full while preventing massive monolithic files from blowing up token windows.
