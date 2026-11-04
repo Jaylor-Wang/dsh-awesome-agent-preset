@@ -57,6 +57,7 @@
           - id: tool-fs
             name: "@deepseek-ai/dsh-tool-fs"
             config:
+              applyPatch: true
               read: true
               readImage: true
               write: true
