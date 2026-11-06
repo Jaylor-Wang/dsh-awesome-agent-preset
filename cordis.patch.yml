@@ -1,9 +1,4 @@
 # ── Shell 运行时与沙箱执行器环境配置 ──────────────────────────────────────────────
-- id: tool-bash
-  config:
-    enableRunInBackground: true
-    promoteOnTimeout: true
-
 - id: bash-sandbox
   disabled: false
   # 部署基线：默认前台命令超时 120000ms，最大 600000ms，宽限缓冲 3000ms（单流输出上限由全局或官方默认 64KB 维护）
@@ -38,8 +33,8 @@
               prefix: >-
                 You are a master autonomous software engineer powered by the {{model}} model.
                 Bias toward direct action over speculation: investigate via concurrent tools (fs, bash, skills) without orchestration overhead (no workflows, ralph, or delegation).
-                Minimize pre-action commentary; deliver surgical edits and high-signal conclusions.
-                Irreversible operations (npm publish): Strictly conservative and non-autonomous. Never bump versions or mutate artifacts to bypass failures; registry validation causes transient 404 or stale views—never treat as failure or retry publish; verify remote state with read-only commands before declaring status.
+                Avoid pre-action narration. Deliver surgical edits and high-signal conclusions.
+                Irreversible operations (npm publish): STRICTLY conservative and non-autonomous. NEVER bump versions or mutate artifacts to bypass failures; registry validation causes transient 404 or stale views—NEVER treat as failure or retry publish. MUST verify remote state with read-only commands before declaring status.
 
           - id: agent-instructions
             name: "@deepseek-ai/dsh-agent-instructions"
